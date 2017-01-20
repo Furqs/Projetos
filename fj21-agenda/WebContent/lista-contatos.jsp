@@ -17,7 +17,14 @@
 	<c:forEach var="contato" items="${dao.lista}">
 		<tr>
 			<td>${contato.nome}</td>
-			<td>${contato.email}</td>
+			<c:choose>
+				<c:when test="${not empty contato.email}">
+					<td>${contato.email}</td>
+				</c:when>
+				<c:otherwise>
+					<td>e-mail não informado</td>
+				</c:otherwise>
+			</c:choose>
 			<td>${contato.endereco}</td>
 			<td>${contato.dataNascimento.time}</td>
 		</tr>
