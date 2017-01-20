@@ -19,7 +19,7 @@
 			<td>${contato.nome}</td>
 			<c:choose>
 				<c:when test="${not empty contato.email}">
-					<td>${contato.email}</td>
+					<td><a href="mailto:${contato.email}">${contato.email}</a></td>
 				</c:when>
 				<c:otherwise>
 					<td>e-mail não informado</td>
