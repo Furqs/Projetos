@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"
  %>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
  
  <c:import url="cabecalho.jsp"></c:import>
  
@@ -28,7 +29,7 @@
 				</c:otherwise>
 			</c:choose>
 			<td>${contato.endereco}</td>
-			<td>${contato.dataNascimento.time}</td>
+			<td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy"/></td>
 		</tr>
 	</c:forEach>
 </table>
