@@ -9,18 +9,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import br.com.caelum.agenda.ConnectionFactory;
 import br.com.caelum.agenda.modelo.Contato;
 
 public class ContatoDao {
 	private Connection connection;
 
-	public ContatoDao() {
-		try {
-			this.connection = new ConnectionFactory().getConnection();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+	public ContatoDao(Connection conn) {
+		this.connection = conn;
 	}
 
 	public void adiciona(Contato contato) {

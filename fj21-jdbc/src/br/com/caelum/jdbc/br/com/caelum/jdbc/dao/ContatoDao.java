@@ -16,9 +16,9 @@ public class ContatoDao
 {
 	private Connection connection;
 	
-	public ContatoDao()
+	public ContatoDao(Connection con)
 	{
-		this.connection = new ConnectionFactory().getConnection();
+		this.connection = con;
 		
 	}
 	
